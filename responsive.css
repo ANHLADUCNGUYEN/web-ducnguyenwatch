@@ -1,0 +1,676 @@
+/* =====================================================
+   RESPONSIVE.CSS - Đức Nguyễn Watch
+   Áp dụng cho toàn bộ 7 trang: nhúng vào CUỐI <head>
+   sau tất cả các file CSS khác
+   ===================================================== */
+
+/* =====================================================
+   BREAKPOINTS:
+   - max-width: 992px  → Tablet (máy tính bảng)
+   - max-width: 768px  → Mobile lớn
+   - max-width: 480px  → Mobile nhỏ
+   ===================================================== */
+
+
+/* =====================================================
+   1. HEADER & NAV - ÁP DỤNG CHO TẤT CẢ CÁC TRANG
+   ===================================================== */
+
+/* Nút hamburger (mặc định ẩn trên desktop) */
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #e0e0e0;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 992px) {
+
+    /* Hiện nút hamburger */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Ẩn menu ngang đi */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #0c0c0c;
+        border-right: 1px solid rgba(220, 179, 101, 0.25);
+        padding: 100px 30px 40px 30px;
+        transition: left 0.35s ease;
+        z-index: 1050;
+        overflow-y: auto;
+    }
+
+    /* Khi JS thêm class 'open' vào nav-menu */
+    .nav-menu.open {
+        left: 0;
+    }
+
+    /* Menu dọc xuống */
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 16px 0;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Ẩn search box mở rộng trên mobile (giữ lại icon) */
+    .search-box.active {
+        width: 160px;
+    }
+
+    /* Header icons thu nhỏ gap */
+    .header-icons {
+        gap: 18px;
+    }
+
+    /* Ẩn chữ logo text khi màn hình nhỏ hơn để tránh tràn */
+    .logo-text {
+        font-size: 18px;
+    }
+
+    /* Overlay mờ khi mở menu */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1040;
+    }
+
+    .nav-overlay.show { display: block; }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 0 4%;
+    }
+    .logo-text {
+        display: none; /* Ẩn chữ, chỉ giữ icon logo trên mobile nhỏ */
+    }
+    .logo-img {
+        height: 36px;
+    }
+    .header-icons {
+        gap: 14px;
+    }
+}
+
+
+/* =====================================================
+   2. FOOTER - ÁP DỤNG CHO TẤT CẢ CÁC TRANG
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px 5%;
+    }
+
+    .brand-col,
+    .links-col,
+    .contact-col {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .brand-col p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 20px 5%;
+    }
+
+    .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .footer-legal a {
+        margin: 0 5px;
+    }
+}
+
+
+/* =====================================================
+   3. TRANG CHỦ (trangchu.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    /* Hero section: xếp dọc */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        width: 95%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+    }
+
+    .floating-watch {
+        max-width: 300px;
+    }
+
+    /* Stats box */
+    .stats-box {
+        max-width: 95%;
+        margin-top: -30px;
+    }
+
+    /* Product grid: 2 cột */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Category grid: 1 cột */
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-card {
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Newsletter */
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-subscribe {
+        padding: 14px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-desc {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+    }
+
+    .stats-box {
+        flex-direction: column;
+    }
+
+    .stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(220, 179, 101, 0.2);
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    /* Product grid: 1 cột */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-title {
+        font-size: 26px;
+    }
+}
+
+
+/* =====================================================
+   4. DANH MỤC (danhmuc.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    /* Banner danh mục */
+    .category-banner {
+        height: 220px;
+    }
+
+    .banner-title {
+        font-size: 36px;
+    }
+
+    /* Filter: xếp dọc */
+    .filter-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Product grid danh mục: 2 cột */
+    .category-products .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Active filters */
+    .active-filters-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-hero {
+        margin-top: 70px;
+        padding: 20px 4%;
+    }
+
+    .category-banner {
+        height: 180px;
+    }
+
+    .banner-title {
+        font-size: 26px;
+    }
+
+    .banner-desc {
+        font-size: 12px;
+    }
+
+    /* Product grid danh mục: 1 cột */
+    .category-products .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pagination-container {
+        margin-top: 30px;
+    }
+}
+
+
+/* =====================================================
+   5. CHI TIẾT SẢN PHẨM (chitiet.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    .pdp-top-grid,
+    .pdp-bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pdp-title {
+        font-size: 30px;
+    }
+
+    .pdp-price {
+        font-size: 22px;
+    }
+
+    .main-image-box {
+        height: 400px;
+    }
+
+    .specs-table {
+        grid-template-columns: 1fr;
+    }
+
+    /* Related products nằm ngang */
+    .related-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .related-card {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pdp-section {
+        padding: 80px 15px 60px 15px;
+    }
+
+    .pdp-title {
+        font-size: 24px;
+    }
+
+    .pdp-quick-specs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pdp-buy-buttons,
+    .pdp-support-buttons {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .main-image-box {
+        height: 280px;
+    }
+
+    .thumbnail-list {
+        gap: 10px;
+    }
+
+    .thumb-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tab-headers {
+        gap: 15px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .tab-btn {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .related-card {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* =====================================================
+   6. GIỎ HÀNG (giohang.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    .cart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-table-header {
+        display: none; /* Ẩn header bảng trên mobile */
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .item-info-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-qty-wrapper {
+        justify-content: center;
+    }
+
+    .item-price-wrapper {
+        text-align: center;
+    }
+
+    .cart-actions-bottom {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-section {
+        padding: 80px 12px 60px 12px;
+    }
+
+    .cart-title-main {
+        font-size: 32px;
+    }
+
+    .cart-items-col,
+    .cart-summary-col {
+        padding: 20px 15px;
+    }
+
+    .promo-box {
+        flex-direction: column;
+    }
+
+    .btn-apply-promo {
+        padding: 12px;
+    }
+}
+
+
+/* =====================================================
+   7. LIÊN HỆ (lienhe.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    /* Xếp dọc: ẩn banner ảnh, chỉ hiện form */
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-banner {
+        min-height: 320px;
+        padding: 100px 30px 40px 30px;
+    }
+
+    .contact-title {
+        font-size: 34px;
+    }
+
+    .contact-form-section {
+        padding: 50px 25px 60px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row-exact {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-footer-exact {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form-title-exact {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-banner {
+        display: none; /* Ẩn hẳn banner trên mobile nhỏ để tiết kiệm không gian */
+    }
+
+    .contact-form-section {
+        padding: 90px 18px 50px 18px;
+    }
+
+    .form-title-exact {
+        font-size: 26px;
+    }
+
+    .form-desc-exact {
+        max-width: 100%;
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   8. ĐĂNG NHẬP / ĐĂNG KÝ (dangnhap.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    /* Ẩn cột ảnh, chỉ hiện form */
+    .auth-banner {
+        display: none;
+    }
+
+    .auth-form-section {
+        padding: 100px 20px 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-form-section {
+        padding: 90px 15px 40px 15px;
+    }
+
+    .auth-tabs {
+        gap: 25px;
+    }
+
+    .social-login {
+        flex-direction: column;
+    }
+
+    .btn-social {
+        width: 100%;
+    }
+
+    .login-options {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+
+/* =====================================================
+   9. TRẢI NGHIỆM (trainghiem.css)
+   ===================================================== */
+
+@media (max-width: 992px) {
+    .exp-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .exp-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .exp-title {
+        font-size: 32px;
+    }
+
+    .commit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Luxury section: đầu trang cần margin vì header fixed */
+    .luxury-experience-section {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .exp-features {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-left-col {
+        padding: 30px 20px;
+    }
+
+    .exp-title {
+        font-size: 26px;
+    }
+
+    .commit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .commit-title {
+        font-size: 28px;
+    }
+
+    .benefit-card {
+        padding: 20px;
+    }
+}
+
+
+/* =====================================================
+   10. TIỆN ÍCH CHUNG - NGĂN TRÀN NGANG TOÀN TRANG
+   ===================================================== */
+
+html, body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Đảm bảo các section không vượt quá màn hình */
+section, .main-footer, .cart-section, .contact-wrapper,
+.auth-wrapper, .luxury-experience-section, .commitments-section {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
