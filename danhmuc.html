@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục - Đức Nguyễn Watch</title>
+    
+    <!-- Nhúng Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Nhúng FontAwesome để lấy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="danhmuc.css">
+</head>
+<body>
+
+    <!-- Bắt đầu Header -->
+    <header class="main-header">
+        
+        <!-- Khối 1: Logo -->
+        <a href="trangchu.html" class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">Đức Nguyễn Watch</div>
+        </a>
+
+        <!-- Khối 2: Menu Điều hướng -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                <li>
+    <a href="danhmuc.html" class="menu-has-dropdown">
+        DANH MỤC 
+        <!-- Mã SVG vẽ mũi tên chỉ xuống -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </a>
+</li>
+                <li><a href="trainghiem.html">TRẢI NGHIỆM</a></li>
+                <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Khối 3: Các biểu tượng chức năng -->
+       <!-- Khối 3: Các biểu tượng chức năng -->
+<div class="header-icons">
+    
+    <!-- Ô tìm kiếm (Ẩn mặc định) -->
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm...">
+    </div>
+
+    <!-- Icon Kính lúp (Thêm id="search-btn") -->
+    <a href="javascript:void(0)" class="icon-item" id="search-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+    
+    <!-- Icon Giỏ hàng (Giữ nguyên) -->
+    <a href="giohang.html" class="icon-item cart-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-badge">0</span>
+    </a>
+    
+    <!-- Icon Tài khoản (Giữ nguyên) -->
+    <a href="dangnhap.html" class="icon-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+</div>
+    </header>
+<!-- =========================================
+     PHẦN BANNER DANH MỤC (HERO BANNER)
+     ========================================= -->
+<section class="category-hero">
+    <div class="category-banner">
+        <!-- Nội dung chữ nằm đè lên trên ảnh -->
+        <div class="banner-content">
+            <span class="banner-subtitle">KHÁM PHÁ</span>
+            <h1 class="banner-title">THẾ GIỚI CHẾ TÁC</h1>
+            <p class="banner-desc">Khám phá toàn bộ các kiệt tác đồng hồ cao cấp tại Đức Nguyễn Watch</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     PHẦN THANH LỌC SẢN PHẨM (FILTER SECTION)
+     ========================================= -->
+<section class="filter-section">
+    <div class="filter-container">
+        
+        <!-- Thanh ngang trên cùng -->
+        <div class="filter-bar">
+            <!-- Nút bật/tắt bộ lọc -->
+            <button class="btn-filter-toggle" id="filter-toggle-btn">
+                <i class="fa-solid fa-bars-staggered"></i> BỘ LỌC
+            </button>
+            <div class="product-count" id="product-count-display">12 sản phẩm</div>
+        </div>
+<!-- THÊM MỚI: Khay chứa các bộ lọc đang áp dụng (Mặc định ẩn) -->
+        <div class="active-filters-container" id="active-filters-container" style="display: none;">
+            <span class="active-filters-label">Đang lọc:</span>
+            <div class="active-filters-list" id="active-filters-list">
+                <!-- JS sẽ tự động in các thẻ bạn đã chọn vào đây (VD: <span>Rolex</span>) -->
+            </div>
+            <button class="btn-clear-filters" id="btn-clear-filters">Xóa bộ lọc</button>
+        </div>
+        <!-- Bảng điều khiển bộ lọc (Mặc định bị ẩn) -->
+        <div class="filter-panel" id="filter-panel">
+            <div class="filter-grid">
+                
+                <!-- Cột 1: Thương Hiệu -->
+                <div class="filter-col">
+                    <h4 class="filter-title">THƯƠNG HIỆU</h4>
+                    <div class="filter-options brand-options">
+                        <button class="filter-tag active">Tất cả</button>
+                        <button class="filter-tag">Rolex</button>
+                        <button class="filter-tag">Omega</button>
+                        <button class="filter-tag">Patek Philippe</button>
+                        <button class="filter-tag">Audemars Piguet</button>
+                        <button class="filter-tag">Cartier</button>
+                        <button class="filter-tag">IWC</button>
+                    </div>
+                </div>
+
+                <!-- Cột 2: Danh Mục -->
+                <div class="filter-col">
+                    <h4 class="filter-title">DANH MỤC</h4>
+                    <div class="filter-options category-options">
+                        <button class="filter-tag active">Tất cả</button>
+                        <button class="filter-tag">Đồng hồ nam</button>
+                        <button class="filter-tag">Đồng hồ nữ</button>
+                    </div>
+                </div>
+
+                <!-- Cột 3: Mức Giá -->
+                <div class="filter-col">
+                    <h4 class="filter-title">MỨC GIÁ</h4>
+                    <div class="filter-options price-options">
+                        <button class="filter-tag active">Tất cả</button>
+                        <button class="filter-tag">Dưới 200 triệu</button>
+                        <button class="filter-tag">200 - 400 triệu</button>
+                        <button class="filter-tag">Trên 400 triệu</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Nút Áp Dụng -->
+            <div class="filter-action">
+                <button class="btn-apply">ÁP DỤNG</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<!-- =========================================
+     PHẦN LƯỚI SẢN PHẨM (PRODUCT GRID)
+     ========================================= -->
+<section class="category-products">
+    <div class="product-container">
+        <!-- Khung lưới chứa các thẻ sản phẩm -->
+        <div class="product-grid" id="category-product-grid">
+            <!-- JavaScript sẽ tự động bơm 12 sản phẩm vào đây -->
+        </div>
+        
+        
+        <!-- ĐÃ THAY ĐỔI: Thanh phân trang giống bản thiết kế -->
+        <div class="pagination-container" id="pagination-wrapper">
+            <button class="page-btn" id="btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="page-btn active" id="btn-page-1">1</button>
+    <button class="page-btn" id="btn-page-2">2</button>
+    <button class="page-btn" id="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+<!-- =========================================
+     PHẦN FOOTER 
+     ========================================= -->
+<footer id="main-footer" >
+    <div class="footer-container">
+        
+        <!-- Cột 1: Thông tin thương hiệu -->
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">Đức Nguyễn Watch</h3>
+            <p>Đẳng cấp trong từng giây phút. Chúng tôi tự hào mang đến những kiệt tác đồng hồ cao cấp từ các thương hiệu danh tiếng thế giới, cam kết 100% chính hãng.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Cột 2: Danh mục -->
+        <div class="footer-col links-col">
+            <h4 class="footer-heading">HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><a href="lienhe.html">Chính sách bảo hành</a></li>
+                <li><a href="lienhe.html">Chính sách đổi trả</a></li>
+                <li><a href="lienhe.html">Chính sách vận chuyển</a></li>
+                <li><a href="lienhe.html">Hướng dẫn mua hàng</a></li>
+                <li><a href="lienhe.html">Liên hệ hỗ trợ</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột 3: Liên hệ -->
+        <div class="footer-col contact-col">
+            <h4 class="footer-heading">LIÊN HỆ</h4>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-info">
+                    <span>Hotline</span>
+                    <strong>0858.616.696</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-info">
+                    <span>Email</span>
+                    <strong>ducnguyen@gmail.com</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-info">
+                    <span>Địa chỉ showroom</span>
+                    <strong>123 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Thanh bản quyền dưới cùng -->
+    <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Đức Nguyễn Watch. Bảo lưu mọi quyền.</div>
+        <div class="footer-legal">
+            <a href="lienhe.html">Chính sách bảo mật</a> |
+            <a href="lienhe.html">Điều khoản sử dụng</a> |
+            <a href="lienhe.html">Chính sách đổi trả</a>
+        </div>
+    </div>
+</footer>
+
+<script src="danhmuc.js"></script>
+
+</body>
+</html>       

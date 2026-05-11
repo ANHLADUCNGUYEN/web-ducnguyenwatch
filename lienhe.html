@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Đức Nguyễn Watch</title>
+    <!-- Nhúng Font Chữ -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Nhúng FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="lienhe.css">
+</head>
+<body>
+
+    <!-- Bắt đầu Header -->
+    <header class="main-header">
+        
+        <!-- Khối 1: Logo -->
+        <a href="trangchu.html" class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">Đức Nguyễn Watch</div>
+        </a>
+
+        <!-- Khối 2: Menu Điều hướng -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                <li>
+    <a href="danhmuc.html" class="menu-has-dropdown">
+        DANH MỤC 
+        <!-- Mã SVG vẽ mũi tên chỉ xuống -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </a>
+</li>
+                <li><a href="trainghiem.html">TRẢI NGHIỆM</a></li>
+                <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+
+       <!-- Khối 3: Các biểu tượng chức năng -->
+<div class="header-icons">
+    
+    <!-- Ô tìm kiếm (Ẩn mặc định) -->
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm...">
+    </div>
+
+    <!-- Icon Kính lúp (Thêm id="search-btn") -->
+    <a href="javascript:void(0)" class="icon-item" id="search-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+    
+    <!-- Icon Giỏ hàng (Giữ nguyên) -->
+    <a href="giohang.html" class="icon-item cart-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-badge">3</span>
+    </a>
+    
+    <!-- Icon Tài khoản (Giữ nguyên) -->
+    <a href="dangnhap.html" class="icon-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+</div>
+        
+    </header>
+<!-- =========================================
+     TRANG LIÊN HỆ (SPLIT SCREEN)
+     ========================================= -->
+<div class="contact-wrapper">
+    
+    <!-- CỘT TRÁI: ẢNH NỀN & THÔNG TIN -->
+    <div class="contact-banner">
+        <!-- Lớp phủ đen mờ giúp chữ nổi bật -->
+        <div class="banner-overlay"></div>
+        
+        <div class="banner-content">
+            <span class="contact-subtitle">LIÊN HỆ</span>
+            <h2 class="contact-title">Chúng tôi luôn<br>sẵn sàng hỗ trợ</h2>
+            <p class="contact-desc">Hãy để lại thông tin, đội ngũ chuyên gia của chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.</p>
+            
+            <!-- Danh sách thông tin liên hệ -->
+            <div class="contact-info-list">
+                <!-- Hotline -->
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                    <div class="info-text">
+                        <span class="info-label">Hotline</span>
+                        <span class="info-value">0858.616.696</span>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                    <div class="info-text">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">info@ducnguyenwatch.vn</span>
+                    </div>
+                </div>
+                <!-- Showroom -->
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <span class="info-label">Showroom</span>
+                        <span class="info-value">123 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CỘT PHẢI: FORM GỬI TIN NHẮN -->
+<div class="contact-form-section">
+    <div class="contact-form-container">
+        
+        <!-- Tiêu đề Form -->
+        <div class="form-header-exact">
+            <span class="form-subtitle-exact">ĐỨC NGUYỄN WATCH</span>
+            <h2 class="form-title-exact">Gửi tin nhắn</h2>
+            <p class="form-desc-exact">Mọi thắc mắc về sản phẩm, tư vấn hoặc hỗ trợ — chúng tôi đều lắng nghe.</p>
+        </div>
+
+        <!-- Khung Form -->
+        <form id="exact-message-form">
+            
+            <!-- Hàng 1 -->
+            <div class="form-row-exact">
+                <div class="input-box-exact">
+                    <label>HỌ VÀ TÊN</label>
+                    <input type="text" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="input-box-exact">
+                    <label>EMAIL</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+            </div>
+
+            <!-- Hàng 2 -->
+            <div class="form-row-exact">
+                <div class="input-box-exact">
+                    <label>SỐ ĐIỆN THOẠI</label>
+                    <input type="tel" placeholder="0123.456.789" required>
+                </div>
+                <div class="input-box-exact">
+                    <label>CHỦ ĐỀ</label>
+                    <div class="select-wrapper-exact">
+                      <select required>
+                         <option value="" disabled selected hidden>Chọn chủ đề</option>
+                         <option value="tu-van">Tư vấn sản phẩm</opoption>
+                          <option value="bao-hanh">Bảo hành & Sửa chữa</option>
+                           <option value="dat-hang">Đặt hàng theo yêu cầu</option>
+                            <option value="khac">Khác</option>
+                      </select>
+                  <i class="fa-solid fa-chevron-down exact-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hàng 3: Nội dung -->
+            <div class="input-box-exact">
+                <label>NỘI DUNG TIN NHẮN</label>
+                <textarea rows="5" placeholder="Nhập nội dung bạn muốn gửi..." maxlength="500" required></textarea>
+                <div class="char-counter-exact"><span id="current-char">0</span>/500 ký tự</div>
+            </div>
+
+            <!-- Nút Gửi -->
+            <button type="submit" class="btn-submit-exact">Gửi tin nhắn</button>
+
+            <!-- Hàng Liên kết dưới cùng (Chia 2 bên) -->
+            <div class="form-footer-exact">
+                <span class="direct-contact">Hoặc liên hệ trực tiếp: <a href="tel:0858616696">0858.616.696</a></span>
+                <a href="dangnhap.html" class="login-link-exact">Đăng nhập / Đăng ký &rarr;</a>
+            </div>
+
+        </form>
+    </div>
+    
+</div>
+
+</div>
+
+<!-- =========================================
+     PHẦN FOOTER 
+     ========================================= -->
+<footer id="main-footer" >
+    <div class="footer-container">
+        
+        <!-- Cột 1: Thông tin thương hiệu -->
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">Đức Nguyễn Watch</h3>
+            <p>Đẳng cấp trong từng giây phút. Chúng tôi tự hào mang đến những kiệt tác đồng hồ cao cấp từ các thương hiệu danh tiếng thế giới, cam kết 100% chính hãng.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/anhladucnguyen/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ducnguyen_luxury/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Cột 2: Danh mục -->
+        <div class="footer-col links-col">
+            <h4 class="footer-heading">HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><a href="lienhe.html">Chính sách bảo hành</a></li>
+                <li><a href="lienhe.html">Chính sách đổi trả</a></li>
+                <li><a href="lienhe.html">Chính sách vận chuyển</a></li>
+                <li><a href="lienhe.html">Hướng dẫn mua hàng</a></li>
+                <li><a href="lienhe.html">Liên hệ hỗ trợ</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột 3: Liên hệ -->
+        <div class="footer-col contact-col">
+            <h4 class="footer-heading">LIÊN HỆ</h4>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-info">
+                    <span>Hotline</span>
+                    <strong>0858.616.696</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-info">
+                    <span>Email</span>
+                    <strong>ducnguyen@gmail.com</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-info">
+                    <span>Địa chỉ showroom</span>
+                    <strong>123 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Thanh bản quyền dưới cùng -->
+    <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Đức Nguyễn Watch. Bảo lưu mọi quyền.</div>
+        <div class="footer-legal">
+            <a href="lienhe.html">Chính sách bảo mật</a> |
+            <a href="lienhe.html">Điều khoản sử dụng</a> |
+            <a href="lienhe.html">Chính sách đổi trả</a>
+        </div>
+    </div>
+</footer>
+
+<script src="lienhe.js"></script>
+</body>
+</html>

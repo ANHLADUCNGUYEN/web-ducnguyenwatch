@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Đức Nguyễn Watch</title>
+    
+    <!-- Nhúng Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Nhúng FontAwesome để lấy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="trangchu.css">
+</head>
+<body>
+
+    <!-- Bắt đầu Header -->
+    <header class="main-header">
+        
+        <!-- Khối 1: Logo -->
+        <a href="trangchu.html" class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text" href="trangchu.html">Đức Nguyễn Watch</div>
+        </a>
+
+        <!-- Khối 2: Menu Điều hướng -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                <li>
+    <a href="danhmuc.html" class="menu-has-dropdown">
+        DANH MỤC 
+        <!-- Mã SVG vẽ mũi tên chỉ xuống -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </a>
+</li>
+                <li><a href="trainghiem.html">TRẢI NGHIỆM</a></li>
+                <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+
+       <!-- Khối 3: Các biểu tượng chức năng -->
+<div class="header-icons">
+    
+    <!-- Ô tìm kiếm (Ẩn mặc định) -->
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm...">
+    </div>
+
+    <!-- Icon Kính lúp (Thêm id="search-btn") -->
+    <a href="javascript:void(0)" class="icon-item" id="search-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+    
+    <!-- Icon Giỏ hàng (Giữ nguyên) -->
+    <a href="giohang.html" class="icon-item cart-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-badge">0</span>
+    </a>
+    
+    <!-- Icon Tài khoản (Giữ nguyên) -->
+    <a href="dangnhap.html" class="icon-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+</div>
+        
+    </header>
+    <!-- PHẦN HERO SECTION -->
+<section class="hero-section">
+    <!-- Nền mờ phía sau (Bạn sẽ chèn ảnh cửa hàng vào đây bằng CSS) -->
+    <div class="hero-background"></div>
+
+    <div class="hero-container"> 
+        <!-- Cột trái: Nội dung chữ -->
+        <div class="hero-content">
+            <span class="hero-badge fade-up delay-1">BỘ SƯU TẬP 2026</span>
+            
+            <h1 class="hero-title fade-up delay-2">
+                Đẳng cấp trong <br>
+                <span class="text-gold-italic">từng giây phút</span>
+            </h1>
+            
+            <p class="hero-desc fade-up delay-3">
+                Khám phá bộ sưu tập đồng hồ cao cấp từ các thương hiệu danh tiếng thế giới. Rolex, Omega, Patek Philippe, Cartier — tất cả đều chính hãng 100%, bảo hành quốc tế.
+            </p>
+            
+            <div class="hero-buttons fade-up delay-4">
+                <button class="btn-solid" onclick="window.location.href='danhmuc.html'">Khám phá ngay</button>
+                <button class="btn-outline" onclick="window.location.href='danhmuc.html'">Xem bộ siêu tập 2026</button>
+            </div>
+        </div>
+
+        <!-- Cột phải: Ảnh đồng hồ -->
+        <div class="hero-image-wrapper fade-in-right delay-5">
+            <!-- Bạn thay link ảnh đồng hồ đã tách nền (PNG) vào thẻ src dưới đây -->
+            <img src="anhgioithieu.jpg" alt="Luxury Watch" class="floating-watch">
+        </div>
+    </div>
+</section>
+<!-- Khối thống kê (Đặt dưới thẻ <div class="hero-buttons">...) -->
+<div class="stats-box fade-up delay-5">
+    
+    <!-- Cột 1 -->
+    <div class="stat-item">
+        <div class="stat-value">
+            <!-- Thuộc tính data-target chứa con số đích đến để JS biết đường chạy -->
+            <span class="counter" data-target="500">0</span>+
+        </div>
+        <div class="stat-text">MẪU ĐỒNG HỒ</div>
+    </div>
+
+    <!-- Cột 2 -->
+    <div class="stat-item">
+        <div class="stat-value">
+            <span class="counter" data-target="10000">0</span>+
+        </div>
+        <div class="stat-text">KHÁCH HÀNG TIN TƯỞNG</div>
+    </div>
+
+    <!-- Cột 3 -->
+    <div class="stat-item">
+        <div class="stat-value">
+            <span class="counter" data-target="100">0</span>%
+        </div>
+        <div class="stat-text">CHÍNH HÃNG</div>
+    </div>
+
+</div>
+
+    <!-- =========================================
+     PHẦN BỘ SƯU TẬP ĐỈNH CAO (6 SẢN PHẨM)
+     ========================================= -->
+<section class="collection-section">
+    <div class="section-header fade-up">
+        <h2 class="section-title">BỘ SƯU TẬP ĐỈNH CAO</h2>
+        <div class="title-line"></div>
+        <p class="section-subtitle">Những kiệt tác đồng hồ được tuyển chọn từ các thương hiệu danh tiếng nhất thế giới</p>
+    </div>
+
+    <!-- Lưới chứa 6 sản phẩm (Sẽ tự động chia 3 cột, 2 hàng) -->
+    <div class="product-grid fade-up delay-2">
+        
+        <!-- Sản phẩm 1 (Có Giảm giá) -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=rolexsub'">
+            <div class="badge badge-sale">GIẢM GIÁ</div>
+            <div class="product-img-wrapper">
+                <img src="rolexsub.jpg" alt="Rolex Submariner">
+                <!-- Lớp phủ chứa nút XEM CHI TIẾT (Ẩn mặc định) -->
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">ROLEX</div>
+                <h3 class="name">Rolex Submariner Date 126610LN</h3>
+                <div class="price-box">
+                    <span class="current-price">385.000.000 ₫</span>
+                    <span class="old-price">420.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 2 (Có nhãn  Mới) -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=omegaspeed'">
+            <div class="badge badge-new">MỚI</div>
+            <div class="product-img-wrapper">
+                <img src="omegamoon.jpg" alt="Omega Speedmaster">
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">OMEGA</div>
+                <h3 class="name">Omega Speedmaster Moonwatch Professional</h3>
+                <div class="price-box">
+                    <span class="current-price">215.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 3 -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=cartiersantos'">
+            <div class="product-img-wrapper">
+                <img src="tank.jpg" alt="Cartier Tank">
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">CARTIER</div>
+                <h3 class="name">Cartier Tank Must Large</h3>
+                <div class="price-box">
+                    <span class="current-price">168.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 4 -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=patekaquanaut'">
+            <div class="product-img-wrapper">
+                <img src="aquanaut.jpg" alt="Sản phẩm 4">
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">PATEK PHILIPPE</div>
+                <h3 class="name">Nautilus 5711/1A-010</h3>
+                <div class="price-box">
+                    <span class="current-price">1.250.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 5 -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=audemarsroyal'">
+            <div class="product-img-wrapper">
+                <img src="royaloak.jpg" alt="Sản phẩm 5">
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">AUDEMARS PIGUET</div>
+                <h3 class="name">Royal Oak Selfwinding</h3>
+                <div class="price-box">
+                    <span class="current-price">890.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 6 -->
+        <div class="product-card" onclick="window.location.href='chitiet.html?id=rolexdaytona'">
+            <div class="product-img-wrapper">
+                <img src="daytona.jpg" alt="Sản phẩm 6">
+                <div class="img-overlay">
+                    <button class="btn-hover-detail">XEM CHI TIẾT</button>
+                </div>
+            </div>
+            <div class="product-info-bottom">
+                <div class="brand">ROLEX</div>
+                <h3 class="name">Daytona 116500LN</h3>
+                <div class="price-box">
+                    <span class="current-price">750.000.000 ₫</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Nút Xem tất cả -->
+    <div class="view-all-container">
+        <a href="danhmuc.html" class="btn-view-all">XEM TẤT CẢ SẢN PHẨM <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- =========================================
+     PHẦN DANH MỤC ĐẲNG CẤP
+     ========================================= -->
+<section class="category-section">
+    <!-- Tiêu đề -->
+    <div class="section-header fade-up">
+        <h2 class="section-title">Danh Mục Đẳng Cấp</h2>
+        <div class="title-line"></div>
+    </div>
+
+    <!-- Lưới 3 thẻ danh mục -->
+    <div class="category-grid fade-up delay-2">
+        
+        <!-- Thẻ 1: Đồng Hồ Nam -->
+        <a href="danhmuc.html" class="category-card">
+            <div class="category-img">
+                <img src="seamaster-2.jpg" alt="Đồng Hồ Nam">
+                <!-- Lớp đen mờ dưới đáy -->
+                <div class="category-overlay"></div>
+            </div>
+            <!-- Mũi tên góc phải trên -->
+            <div class="circle-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <!-- Nội dung chữ -->
+            <div class="category-content">
+                <span class="item-count">280 SẢN PHẨM</span>
+                <h3 class="category-name">Đồng Hồ Nam</h3>
+                <p class="category-desc">Sự mạnh mẽ và tinh tế</p>
+            </div>
+        </a>
+
+        <!-- Thẻ 2: Đồng Hồ Nữ -->
+        <a href="danhmuc.html" class="category-card">
+            <div class="category-img">
+                <img src="datejust.jpg" alt="Đồng Hồ Nữ">
+                <div class="category-overlay"></div>
+            </div>
+            <div class="circle-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="category-content">
+                <span class="item-count">220 SẢN PHẨM</span>
+                <h3 class="category-name">Đồng Hồ Nữ</h3>
+                <p class="category-desc">Vẻ đẹp vượt thời gian</p>
+            </div>
+        </a>
+
+        <!-- Thẻ 3: Bộ Sưu Tập Mới -->
+        <a href="danhmuc.html" class="category-card">
+            <div class="category-img">
+                <img src="bosieutap.jpg" alt="Bộ Sưu Tập Mới">
+                <div class="category-overlay"></div>
+            </div>
+            <div class="circle-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="category-content">
+                <span class="item-count">45 SẢN PHẨM</span>
+                <h3 class="category-name">Bộ Sưu Tập Mới</h3>
+                <p class="category-desc">Những kiệt tác 2026</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+<!-- =========================================
+     PHẦN NHẬN ƯU ĐÃI ĐỘC QUYỀN
+     ========================================= -->
+<section class="newsletter-section">
+    <div class="newsletter-icon"><i class="fa-regular fa-envelope"></i></div>
+    <h2 class="newsletter-title">Nhận Ưu Đãi Độc Quyền</h2>
+    <p class="newsletter-desc">Đăng ký nhận tin để cập nhật bộ sưu tập mới nhất và ưu đãi<br>đặc biệt dành riêng cho thành viên</p>
+    
+    <!-- Form nhập email -->
+    <form id="subscribe-form" class="newsletter-form">
+        <input type="email" id="email-input" placeholder="Nhập email của bạn" required>
+        <button type="submit" class="btn-subscribe">Đăng ký</button>
+    </form>
+    <!-- THÊM ĐOẠN NÀY: Khối thông báo thành công (Mặc định ẩn) -->
+    <div id="success-message" class="success-message" style="display: none;">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h3 class="success-title">Đăng ký thành công!</h3>
+        <p class="success-desc">Cảm ơn bạn đã đăng ký. Chúng tôi sẽ gửi những ưu đãi tốt nhất đến hộp thư của bạn.</p>
+    </div>
+    <p class="newsletter-note">Bảo mật tuyệt đối. Hủy đăng ký bất kỳ lúc nào.</p>
+</section>
+
+<!-- =========================================
+     PHẦN FOOTER 
+     ========================================= -->
+<footer id="main-footer" >
+    <div class="footer-container">
+        
+        <!-- Cột 1: Thông tin thương hiệu -->
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">Đức Nguyễn Watch</h3>
+            <p>Đẳng cấp trong từng giây phút. Chúng tôi tự hào mang đến những kiệt tác đồng hồ cao cấp từ các thương hiệu danh tiếng thế giới, cam kết 100% chính hãng.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/anhladucnguyen/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ducnguyen_luxury/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Cột 2: Danh mục -->
+        <div class="footer-col links-col">
+            <h4 class="footer-heading">HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><a href="lienhe.html">Chính sách bảo hành</a></li>
+                <li><a href="lienhe.html">Chính sách đổi trả</a></li>
+                <li><a href="lienhe.html">Chính sách vận chuyển</a></li>
+                <li><a href="lienhe.html">Hướng dẫn mua hàng</a></li>
+                <li><a href="lienhe.html">Liên hệ hỗ trợ</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột 3: Liên hệ -->
+        <div class="footer-col contact-col">
+            <h4 class="footer-heading">LIÊN HỆ</h4>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-info">
+                    <span>Hotline</span>
+                    <strong>0858.616.696</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-info">
+                    <span>Email</span>
+                    <strong>ducnguyen@gmail.com</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-info">
+                    <span>Địa chỉ showroom</span>
+                    <strong>123 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Thanh bản quyền dưới cùng -->
+    <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Đức Nguyễn Watch. Bảo lưu mọi quyền.</div>
+        <div class="footer-legal">
+            <a href="lienhe.html">Chính sách bảo mật</a> |
+            <a href="lienhe.html">Điều khoản sử dụng</a> |
+            <a href="lienhe.html">Chính sách đổi trả</a>
+        </div>
+    </div>
+</footer>
+<script src="trangchu.js"></script>
+
+</body>
+</html> 

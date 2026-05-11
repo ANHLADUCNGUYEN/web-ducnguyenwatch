@@ -1,0 +1,779 @@
+/* --- Cài đặt cơ bản --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a; /* Nền xám nhạt để dễ nhìn header đen */
+    color: #ffffff;            /* Chữ mặc định là màu trắng */
+    margin: 0;                 /* Xóa viền trắng mặc định của trình duyệt */
+    padding: 0;
+}
+
+/* --- Khung Header Tổng --- */
+.main-header {
+    position: fixed; /* Ghim Header đứng im trên cùng màn hình */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000; /* Luôn nổi lên trên cùng */
+    
+    /* 1. Trạng thái ban đầu: Trong suốt và KHÔNG có viền */
+    background-color: transparent; 
+    border-bottom: 1px solid transparent; 
+    transition: all 0.4s ease; /* Chuyển đổi mượt mà */
+}
+.main-header.scrolled {
+    background-color: #0a0a0a; /* Màu đen tuyền của bạn */
+    border-bottom: 1px solid rgba(220, 179, 101, 0.3); /* Viền vàng đồng mờ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Thêm tí bóng đen phía dưới cho đẹp */
+}
+
+/* --- Khối 1: Logo --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa ảnh và chữ */
+    text-decoration: none;
+}
+
+/* Chỉnh kích thước cho ảnh logo của bạn */
+.logo-img {
+    height: 45px; /* Để cao bằng với cái vòng tròn cũ cho cân đối */
+    width: auto;
+    object-fit: contain;
+    
+    /* MẸO: Nếu ảnh của bạn hình vuông và bạn muốn bo tròn nó lại giống mẫu cũ, 
+       hãy xóa dấu gạch chéo ở dòng bên dưới đi nhé: */
+    /* border-radius: 50%; */
+}
+/* --- Căn chỉnh mũi tên bên cạnh chữ --- */
+.menu-has-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa chữ và mũi tên */
+}
+
+/* Đẩy mũi tên lên một xíu để nó nằm chính giữa dòng chữ */
+.menu-has-dropdown svg {
+    margin-top: -2px; 
+}
+.logo-text {
+    color: #dcb365;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- Khối 2: Menu Điều hướng --- */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Khoảng cách giữa các chữ trong menu */
+}
+
+.nav-menu a {
+    color: #e0e0e0; /* Màu xám trắng */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px; /* Kéo dãn khoảng cách giữa các chữ cái cho sang trọng */
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #dcb365; /* Đổi màu vàng khi di chuột vào */
+}
+
+/* --- Khối 3: Các biểu tượng --- */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Khoảng cách giữa 3 icon */
+}
+
+.icon-item {
+    color: #e0e0e0;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-item:hover {
+    color: #dcb365;
+}
+
+/* Xử lý riêng cục số 3 màu vàng trên giỏ hàng */
+.cart-wrapper {
+    position: relative; /* Đặt làm mốc để cục số 3 bám vào */
+}
+
+.cart-badge {
+    position: absolute; /* Bay lơ lửng so với icon giỏ hàng */
+    top: -6px;
+    right: -10px;
+    background-color: #e4c267;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; /* Làm tròn xoe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* --- Khu vực Thanh tìm kiếm ẩn --- */
+.search-box {
+    width: 0; /* Chiều rộng bằng 0 để ẩn đi */
+    overflow: hidden; /* Cắt bỏ phần thừa khi thu gọn */
+    transition: width 0.4s ease; /* Hiệu ứng giãn mở mượt mà trong 0.4 giây */
+    display: flex;
+    align-items: center;
+}
+
+/* Khi được JS kích hoạt class 'active' */
+.search-box.active {
+    width: 250px; /* Giãn rộng ra */
+    margin-right: 10px; /* Cách icon kính lúp 1 chút */
+}
+
+/* Trang trí ô nhập chữ giống y mẫu */
+.search-box input {
+    width: 100%;
+    background-color: transparent; /* Nền trong suốt để tiệp với nền đen */
+    border: 1px solid #dcb365; /* Khung viền vàng đồng */
+    color: #e0e0e0;
+    padding: 8px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none; /* Bỏ viền xanh mặc định của trình duyệt khi nhấp vào */
+}
+
+/* Chỉnh màu cho chữ "Tìm kiếm..." */
+.search-box input::placeholder {
+    color: #888;
+}
+
+/* Giữ icon sáng màu vàng đồng khi thanh tìm kiếm đang mở */
+.icon-item.active,
+.icon-item.active svg {
+    color: #dcb365;
+    stroke: #dcb365;
+}
+/* =========================================
+   CATEGORY HERO BANNER
+   ========================================= */
+.category-hero {
+    /* Thêm dòng này để đẩy Banner xuống, né cái Header ra */
+    margin-top: 90px; /* Bạn có thể tăng giảm số 90px này (ví dụ 80px, 100px) cho đến khi nó hở ra vừa mắt */
+    /* Tạo khoảng trống với Header ở trên và phần lưới sản phẩm ở dưới */
+    padding: 40px 5%; 
+    background-color: #050505; /* Màu nền đen tuyền của cả trang web */
+}
+
+.category-banner {
+    position: relative;
+    max-width: 1200px;
+    height: 320px; /* Chiều cao của banner, bạn có thể chỉnh to nhỏ tùy ý */
+    margin: 0 auto;
+    
+    /* Thiết lập ảnh nền */
+    background-image: url('anhxuhuong.png'); /* <-- Bạn thay tên file ảnh của bạn vào đây nhé */
+
+    background-position: center;
+    /* CÂU THẦN CHÚ ÉP KHÍT */
+    background-size: 100% 100%; /* Số đầu là ép chiều ngang 100%, số sau là ép chiều dọc 100% */
+
+    background-repeat: no-repeat;
+    
+    /* Bo góc và viền vàng */
+    border-radius: 8px;
+    border: 1px solid rgba(220, 179, 101, 0.4); /* Viền vàng hơi mờ cho tinh tế */
+    overflow: hidden; /* Giữ cho lớp phủ đen không bị tràn ra ngoài viền bo góc */
+    
+    /* Flexbox để căn giữa nội dung chữ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Tấm kính đen mờ phủ lên ảnh */
+.category-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); /* Độ mờ của màu đen (0.65). Tăng số này lên nếu muốn tối hơn */
+    z-index: 1;
+}
+
+/* Khung chứa chữ phải nổi lên trên tấm kính đen */
+.banner-content {
+    position: relative;
+    z-index: 2; 
+    padding: 20px;
+}
+
+/* Định dạng các dòng chữ */
+.banner-subtitle {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: #dcb365;
+    font-size: 12px;
+    letter-spacing: 4px; /* Khoảng cách giữa các chữ cái dãn rộng ra */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    color: #dcb365; /* Màu vàng sang trọng */
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Đổ bóng nhẹ cho chữ sắc nét hơn */
+}
+
+.banner-desc {
+    font-family: 'Montserrat', sans-serif;
+    color: #cccccc; /* Màu xám sáng */
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+/* =========================================
+   FILTER SECTION
+   ========================================= */
+.filter-section {
+    background-color: #050505;
+    border-bottom: 1px solid #050505;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+   padding: 0 20px;
+    
+}
+
+/* --- Thanh Ngang --- */
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.product-count {
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+/* Nút Bật/Tắt Bộ Lọc (Trạng thái chưa bấm) */
+.btn-filter-toggle {
+    background: transparent;
+    color: #dcb365;
+    border: 1px solid #dcb365;
+    border-radius: 25px; /* Bo tròn 2 đầu */
+    padding: 8px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Nút Bật/Tắt Bộ Lọc (Trạng thái đã bấm mở) */
+.btn-filter-toggle.active {
+    background: linear-gradient(to right, #dcb365, #c19b4c);
+    color: #000;
+}
+
+/* --- Bảng Điều Khiển (Panel) --- */
+.filter-panel {
+    display: none; /* Mặc định giấu đi */
+    padding: 20px 0 40px 0;
+    border-top: 1px solid #1a1a1a;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia 3 cột đều nhau */
+    gap: 40px;
+}
+
+.filter-title {
+    color: #dcb365;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Khung chứa các thẻ lọc (Dùng flex-wrap để tự động rớt dòng nếu nhiều thẻ) */
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Thẻ lọc (Trạng thái chưa chọn) */
+.filter-tag {
+    background: transparent;
+    color: #888;
+    border: 1px solid #222;
+    padding: 8px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-tag:hover {
+    border-color: #555;
+    color: #ccc;
+}
+
+/* Thẻ lọc (Trạng thái ĐANG CHỌN) */
+.filter-tag.active {
+    background: linear-gradient(to right, #dcb365, #c19b4c);
+    color: #000;
+    border-color: transparent;
+    font-weight: 500;
+}
+
+/* --- Nút Áp Dụng --- */
+.filter-action {
+    margin-top: 40px;
+}
+
+.btn-apply {
+    background: linear-gradient(to right, #dcb365, #c19b4c);
+    color: #000;
+    border: none;
+    padding: 12px 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-apply:hover {
+    transform: translateY(-2px);
+}
+/* --- Khay chứa bộ lọc đang áp dụng --- */
+.active-filters-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px; /* Tạo khoảng cách với lưới sản phẩm bên dưới */
+}
+
+.active-filters-label {
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.active-filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Kiểu dáng của từng thẻ hiển thị kết quả (VD: "Rolex", "Đồng hồ nam") */
+.applied-tag {
+    background-color: #161616;
+    color: #dcb365;
+    border: 1px solid #333;
+    padding: 6px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    border-radius: 4px;
+}
+
+/* Nút xóa nhanh tất cả bộ lọc */
+.btn-clear-filters {
+    background: transparent;
+    color: #666;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: auto; /* Lệnh này tự động đẩy nút sang tít góc phải */
+    transition: color 0.3s;
+}
+
+.btn-clear-filters:hover {
+    color: #fff;
+}
+
+
+
+
+/* =========================================
+   CATEGORY PRODUCT GRID
+   ========================================= */
+.category-products {
+    background-color: #050505; /* Màu nền đen tuyền cho đồng nhất */
+    padding: 50px 5% 80px 5%;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Chia lưới: 4 cột trên PC, tự động thu hẹp trên đt */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* =========================================
+   STYLE CHO CARD SẢN PHẨM (CHUẨN ẢNH THIẾT KẾ)
+   ========================================= */
+
+/* Khung bọc ngoài của 1 sản phẩm */
+.product-card {
+    background-color: #121212; /* Màu nền xám đen đặc trưng */
+    border: 1px solid #1f1f1f; /* Viền mờ bao quanh */
+    border-radius: 6px; /* Bo góc nhẹ nhàng */
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: #dcb365; /* Hover chuột vào thì viền sáng màu vàng */
+    transform: translateY(-5px); /* Nảy nhẹ lên */
+}
+
+/* Ảnh sản phẩm */
+.product-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Cắt ảnh thành hình vuông chuẩn */
+    overflow: hidden;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Các nhãn (Badge) ở góc trái ảnh */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+.badge-new { background-color: #dcb365; color: #000; } /* MỚI - Màu vàng */
+.badge-sale { background-color: #e74c3c; color: #fff; } /* GIẢM GIÁ - Màu đỏ */
+
+/* Nút XEM CHI TIẾT màu vàng khi Hover */
+.img-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-img-wrapper:hover .img-overlay { opacity: 1; }
+
+.btn-hover-detail {
+    background-color: #dcb365;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Thông tin dưới ảnh */
+.product-info-bottom {
+    padding: 20px 15px;
+}
+
+.brand {
+    color: #666666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.name {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    min-height: 40px; /* Giữ cho tên dài/ngắn không làm thụt thò các Card */
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    color: #dcb365;
+    font-family: 'Playfair Display', serif; /* Font chữ có chân sang trọng cho số tiền */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.old-price {
+    color: #555555;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+
+
+/* =========================================
+   STYLE CHO PHÂN TRANG (PAGINATION)
+   ========================================= */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.page-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Trang đang được chọn */
+.page-btn.active {
+    background-color: #dcb365;
+    border-color: #dcb365;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Khi trỏ chuột vào các trang khác */
+.page-btn:hover:not(.active) {
+    border-color: #dcb365;
+    color: #dcb365;
+}
+
+
+/* =========================================
+   FOOTER SECTION
+   ========================================= */
+.main-footer {
+    background-color: #000000; /* Màu nền sáng hơn nền đen một chút */
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Khu vực 3 cột --- */
+.footer-container {
+    background-color: #1a1a1a; /* Màu nền sáng hơn nền đen một chút */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* ĐÃ SỬA: Cho phép mở rộng 100% màn hình */
+    max-width: 100%; 
+    width: 100%;
+    
+    /* Lề hai bên đang để 5%. Bạn có thể chỉnh số này (ví dụ 3% hoặc 8%) 
+       để nó khớp 100% với cái lề của Header nhé! */
+    padding: 70px 5%; 
+    margin: 0 auto;
+}
+
+/* Chia lại tỷ lệ độ rộng cho 3 cột */
+.brand-col { width: 35%; }
+.links-col { width: 20%; }
+.contact-col { width: 30%; }
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: #dcb365;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.brand-col p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 90%;
+    color: #888;
+}
+
+.social-links { display: flex; gap: 15px; }
+.social-links a {
+    display: flex; justify-content: center; align-items: center;
+    width: 35px; height: 35px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    color: #888;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+}
+.social-links a:hover {
+    border-color: #dcb365;
+    color: #dcb365;
+}
+
+.footer-heading {
+    color: #dcb365;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.links-col ul { list-style: none; padding: 0; margin: 0; }
+.links-col li { margin-bottom: 15px; }
+.links-col a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+.links-col a:hover { color: #dcb365; }
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    display: flex; justify-content: center; align-items: center;
+    width: 35px; height: 35px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    color: #dcb365;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 4px; }
+.contact-info span { font-size: 13px; color: #666; }
+.contact-info strong { font-size: 14px; color: #fff; font-weight: 500; }
+
+/* --- Thanh bản quyền dưới cùng --- */
+.footer-bottom {
+    border-top: 0.5px solid #dcb365;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a; /* Màu nền sáng hơn nền đen một chút */
+    
+    /* ĐÃ SỬA: Cho phép mở rộng 100% giống phần trên */
+    max-width: 100%;
+    padding: 25px 5%; /* Nhớ giữ số 5% này giống hệt số ở .footer-container */
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #666666;
+}
+.footer-legal a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-legal a:hover { color: #dcb365; }
+/* --- Trạng thái Đăng ký thành công --- */
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    animation: fadeIn 0.5s ease forwards; /* Hiệu ứng mờ dần hiện ra */
+}
+
+.success-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(220, 179, 101, 0.4);
+    border-radius: 50%;
+    color: #dcb365;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.success-title {
+    color: #dcb365;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.success-desc {
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Khai báo hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

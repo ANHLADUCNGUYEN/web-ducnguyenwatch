@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Đức Nguyễn Watch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="giohang.css">
+</head>
+<body>
+ 
+    <header class="main-header">
+        
+        <a href="trangchu.html" class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">Đức Nguyễn Watch</div>
+        </a>
+ 
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                <li>
+                    <a href="danhmuc.html" class="menu-has-dropdown">
+                        DANH MỤC 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                </li>
+                <li><a href="trainghiem.html">TRẢI NGHIỆM</a></li>
+                <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+ 
+        <div class="header-icons">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Tìm kiếm...">
+            </div>
+            <a href="javascript:void(0)" class="icon-item" id="search-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </a>
+            <a href="giohang.html" class="icon-item cart-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span class="cart-badge">0</span>
+            </a>
+            <a href="dangnhap.html" class="icon-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+        </div>
+        
+    </header>
+ 
+<!-- =========================================
+     TRANG GIỎ HÀNG (ĐỨC NGUYỄN WATCH)
+     ========================================= -->
+<section class="cart-section">
+    <div class="cart-container">
+        
+        <div class="cart-header-main">
+            <h1 class="cart-title-main">Giỏ hàng của bạn</h1>
+            <p class="cart-subtitle-main" id="cart-item-count">Đang tải dữ liệu...</p> 
+        </div>
+ 
+        <!-- TRẠNG THÁI 1: GIỎ HÀNG TRỐNG -->
+        <div id="empty-cart-view" class="cart-view" style="display: none;">
+            <div class="empty-cart-content">
+                <div class="empty-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <h3 class="empty-title">Giỏ hàng trống</h3>
+                <p class="empty-desc">Hãy khám phá bộ sưu tập đồng hồ cao cấp của chúng tôi.</p>
+                <a href="danhmuc.html" class="btn-explore">Khám phá ngay</a>
+            </div>
+        </div>
+ 
+        <!-- TRẠNG THÁI 2: GIỎ HÀNG CÓ SẢN PHẨM -->
+        <div id="filled-cart-view" class="cart-view" style="display: none;">
+            <div class="cart-grid">
+                
+                <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM -->
+                <div class="cart-items-col">
+                    <div class="cart-table-header">
+                        <span class="col-product">SẢN PHẨM</span>
+                        <span class="col-qty">SỐ LƯỢNG</span>
+                        <span class="col-price">GIÁ BÁN</span>
+                    </div>
+ 
+                    <!-- JS sẽ tự động render sản phẩm vào đây -->
+                    <div id="cart-items-list"></div>
+ 
+                    <div class="cart-actions-bottom">
+                        <a href="danhmuc.html" class="link-continue-shopping"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua sắm</a>
+                        <button class="btn-clear-cart" id="btn-clear-all">Xóa tất cả</button>
+                    </div>
+                </div>
+ 
+                <!-- CỘT PHẢI: TÓM TẮT ĐƠN HÀNG -->
+                <div class="cart-summary-col">
+                    <h3 class="summary-title">Tóm tắt đơn hàng</h3>
+                    
+                    <div class="promo-box">
+                        <input type="text" placeholder="Nhập mã khuyến mại">
+                        <button class="btn-apply-promo">Áp dụng</button>
+                    </div>
+ 
+                    <div class="summary-row">
+                        <span class="summary-label">Tổng cộng</span>
+                        <span class="summary-value" id="summary-subtotal">0 đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Giảm giá</span>
+                        <span class="summary-value">0 đ</span>
+                    </div>
+                    
+                    <hr class="summary-divider">
+                    
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Tổng giá</span>
+                        <span class="summary-value total-price" id="summary-total">0 đ</span>
+                    </div>
+ 
+                    <button class="btn-checkout">Thanh toán</button>
+                    <p class="shipping-notice">Miễn phí vận chuyển cho đơn trên 50 triệu</p>
+                </div>
+ 
+            </div>
+        </div>
+ 
+    </div>
+</section>
+ 
+ 
+<!-- =========================================
+     PHẦN FOOTER 
+     ========================================= -->
+<footer id="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">Đức Nguyễn Watch</h3>
+            <p>Đẳng cấp trong từng giây phút. Chúng tôi tự hào mang đến những kiệt tác đồng hồ cao cấp từ các thương hiệu danh tiếng thế giới, cam kết 100% chính hãng.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/anhladucnguyen/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ducnguyen_luxury/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+ 
+        <div class="footer-col links-col">
+            <h4 class="footer-heading">HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><a href="lienhe.html">Chính sách bảo hành</a></li>
+                <li><a href="lienhe.html">Chính sách đổi trả</a></li>
+                <li><a href="lienhe.html">Chính sách vận chuyển</a></li>
+                <li><a href="lienhe.html">Hướng dẫn mua hàng</a></li>
+                <li><a href="lienhe.html">Liên hệ hỗ trợ</a></li>
+            </ul>
+        </div>
+ 
+        <div class="footer-col contact-col">
+            <h4 class="footer-heading">LIÊN HỆ</h4>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-info">
+                    <span>Hotline</span>
+                    <strong>0858.616.696</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-info">
+                    <span>Email</span>
+                    <strong>ducnguyen@gmail.com</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-info">
+                    <span>Địa chỉ showroom</span>
+                    <strong>123 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</strong>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Đức Nguyễn Watch. Bảo lưu mọi quyền.</div>
+        <div class="footer-legal">
+            <a href="lienhe.html">Chính sách bảo mật</a> |
+            <a href="lienhe.html">Điều khoản sử dụng</a> |
+            <a href="lienhe.html">Chính sách đổi trả</a>
+        </div>
+    </div>
+</footer>
+ 
+<script src="giohang.js"></script>
+</body>
+</html>
+ 
