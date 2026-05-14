@@ -47,11 +47,11 @@
  
         /* Bấm overlay thì đóng */
         overlay.addEventListener('click', closeMenu);
-         /* Bấm link trong menu thì vẫn chuyển trang bình thường */
+ 
+        /* Bấm link trong menu thì đóng */
         navMenu.querySelectorAll('a').forEach(function (link) {
-         link.addEventListener('click', closeMenu);  
+            link.addEventListener('click', closeMenu);
         });
-
     }
  
     document.addEventListener('DOMContentLoaded', initMobileMenu);
