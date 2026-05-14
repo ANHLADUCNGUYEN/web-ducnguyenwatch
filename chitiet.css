@@ -296,11 +296,6 @@ body {
 .r-name { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 8px; line-height: 1.4;}
 .r-price { color: #dcb365; font-size: 13px; font-weight: 500;}
 
-/* Responsive */
-@media (max-width: 992px) {
-    .pdp-top-grid, .pdp-bottom-grid { grid-template-columns: 1fr; gap: 30px;}
-    .specs-table { grid-template-columns: 1fr; }
-}
 
 
 

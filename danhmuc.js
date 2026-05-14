@@ -73,18 +73,18 @@ if (subscribeForm && successMessage) {
 // Data 12 sản phẩm
 const danhSachSanPham = [
 
-    { id: "omegaspeed", thuongHieu: "OMEGA", danhMuc: "Đồng hồ nam", ten: "Speedmaster Moonwatch", giaMoi: 215000000, giaCu: 230000000, anh: "omegamoon.jpg", nhan: "GIẢM GIÁ", classNhan: "badge-sale" },
-    { id: "pateknautilus", thuongHieu: "PATEK PHILIPPE", danhMuc: "Đồng hồ nam", ten: "Nautilus 5711/1A-010", giaMoi: 1250000000, giaCu: null, anh: "nautilus.jpg", nhan: null, classNhan: null },
-    { id: "audemarsroyal", thuongHieu: "AUDEMARS PIGUET", danhMuc: "Đồng hồ nam", ten: "Royal Oak Selfwinding", giaMoi: 850000000, giaCu: null, anh: "royaloak.jpg", nhan: null, classNhan: null },
-    { id: "rolexsub", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nam", ten: "Submariner Date 126610LN", giaMoi: 385000000, giaCu: null, anh: "rolexsub.jpg", nhan: "MỚI", classNhan: "badge-new" },
-    { id: "cartiersantos", thuongHieu: "CARTIER", danhMuc: "Đồng hồ nam", ten: "Santos de Cartier", giaMoi: 185000000, giaCu: null, anh: "santos.jpg", nhan: "HOT", classNhan: "badge-hot" },
-    { id: "iwccronograph", thuongHieu: "IWC", danhMuc: "Đồng hồ nữ", ten: "Portugieser Chronograph", giaMoi: 220000000, giaCu: 245000000, anh: "portugieser.jpg", nhan: "GIẢM GIÁ", classNhan: "badge-sale" },
-    { id: "rolexdatejust", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nữ", ten: "Datejust 36 126233", giaMoi: 320000000, giaCu: null, anh: "datejust.jpg", nhan: null, classNhan: null },
-    { id: "omegaseamaster", thuongHieu: "OMEGA", danhMuc: "Đồng hồ nam", ten: "Seamaster Diver 300M", giaMoi: 145000000, giaCu: null, anh: "seamaster.jpg", nhan: null, classNhan: null },
-    { id: "patekaquanaut", thuongHieu: "PATEK PHILIPPE", danhMuc: "Đồng hồ nam", ten: "Aquanaut 5167A", giaMoi: 980000000, giaCu: null, anh: "aquanaut.jpg", nhan: "HIẾM", classNhan: "badge-new" },
-    { id: "audemarsoffshore", thuongHieu: "AUDEMARS PIGUET", danhMuc: "Đồng hồ nam", ten: "Royal Oak Offshore", giaMoi: 920000000, giaCu: null, anh: "offshore.jpg", nhan: null, classNhan: null },
-    { id: "cartiertank", thuongHieu: "CARTIER", danhMuc: "Đồng hồ nữ", ten: "Tank Must", giaMoi: 850000000, giaCu: null, anh: "tank.jpg", nhan: null, classNhan: null },
-    { id: "rolexdaytona", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nam", ten: "Daytona 116500LN", giaMoi: 750000000, giaCu: null, anh: "daytona.jpg", nhan: "MỚI", classNhan: "badge-new" }
+    { id: "omegaspeed", thuongHieu: "OMEGA", danhMuc: "Đồng hồ nam", ten: "Speedmaster Moonwatch", giaMoi: 215000000, giaCu: 230000000, anh: "anh/omegamoon.jpg", nhan: "GIẢM GIÁ", classNhan: "badge-sale" },
+    { id: "pateknautilus", thuongHieu: "PATEK PHILIPPE", danhMuc: "Đồng hồ nam", ten: "Nautilus 5711/1A-010", giaMoi: 1250000000, giaCu: null, anh: "anh/nautilus.jpg", nhan: null, classNhan: null },
+    { id: "audemarsroyal", thuongHieu: "AUDEMARS PIGUET", danhMuc: "Đồng hồ nam", ten: "Royal Oak Selfwinding", giaMoi: 850000000, giaCu: null, anh: "anh/royaloak.jpg", nhan: null, classNhan: null },
+    { id: "rolexsub", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nam", ten: "Submariner Date 126610LN", giaMoi: 385000000, giaCu: null, anh: "anh/rolexsub.jpg", nhan: "MỚI", classNhan: "badge-new" },
+    { id: "cartiersantos", thuongHieu: "CARTIER", danhMuc: "Đồng hồ nam", ten: "Santos de Cartier", giaMoi: 185000000, giaCu: null, anh: "anh/santos.jpg", nhan: "HOT", classNhan: "badge-hot" },
+    { id: "iwccronograph", thuongHieu: "IWC", danhMuc: "Đồng hồ nữ", ten: "Portugieser Chronograph", giaMoi: 220000000, giaCu: 245000000, anh: "anh/portugieser.jpg", nhan: "GIẢM GIÁ", classNhan: "badge-sale" },
+    { id: "rolexdatejust", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nữ", ten: "Datejust 36 126233", giaMoi: 320000000, giaCu: null, anh: "anh/datejust.jpg", nhan: null, classNhan: null },
+    { id: "omegaseamaster", thuongHieu: "OMEGA", danhMuc: "Đồng hồ nam", ten: "Seamaster Diver 300M", giaMoi: 145000000, giaCu: null, anh: "anh/seamaster.jpg", nhan: null, classNhan: null },
+    { id: "patekaquanaut", thuongHieu: "PATEK PHILIPPE", danhMuc: "Đồng hồ nam", ten: "Aquanaut 5167A", giaMoi: 980000000, giaCu: null, anh: "anh/aquanaut.jpg", nhan: "HIẾM", classNhan: "badge-new" },
+    { id: "audemarsoffshore", thuongHieu: "AUDEMARS PIGUET", danhMuc: "Đồng hồ nam", ten: "Royal Oak Offshore", giaMoi: 920000000, giaCu: null, anh: "anh/offshore.jpg", nhan: null, classNhan: null },
+    { id: "cartiertank", thuongHieu: "CARTIER", danhMuc: "Đồng hồ nữ", ten: "Tank Must", giaMoi: 850000000, giaCu: null, anh: "anh/tank.jpg", nhan: null, classNhan: null },
+    { id: "rolexdaytona", thuongHieu: "ROLEX", danhMuc: "Đồng hồ nam", ten: "Daytona 116500LN", giaMoi: 750000000, giaCu: null, anh: "anh/daytona.jpg", nhan: "MỚI", classNhan: "badge-new" }
 ];
 
 function dinhDangTien(soTien) { return soTien.toLocaleString('vi-VN') + ' ₫'; }

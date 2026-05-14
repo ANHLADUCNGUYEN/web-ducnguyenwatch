@@ -195,7 +195,7 @@ body {
     flex: 1; /* Chiếm 50% */
     position: relative;
     /* THAY ĐỔI ĐƯỜNG DẪN ẢNH CỦA BẠN VÀO ĐÂY */
-    background-image: url('dangnhap.jpg');
+    background-image: url('anh/dangnhap.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -409,10 +409,6 @@ body {
     border-color: #555;
 }
 
-/* Responsive: Ẩn cột ảnh trên điện thoại */
-@media (max-width: 992px) {
-    .auth-banner { display: none; }
-}
 /* --- Căn chỉnh khu vực Ghi nhớ & Quên mật khẩu --- */
 .login-options {
     display: flex;

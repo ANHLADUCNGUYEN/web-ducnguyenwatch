@@ -366,14 +366,6 @@ body {
 }
 .shipping-notice { text-align: center; color: #666; font-size: 12px;}
 
-/* Responsive */
-@media (max-width: 992px) {
-    .cart-grid { grid-template-columns: 1fr; }
-    .cart-item { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-    .item-info-wrapper { flex-direction: column; }
-    .col-qty, .col-price { display: none; }
-    .item-price-wrapper { text-align: center; }
-}
 
 
 

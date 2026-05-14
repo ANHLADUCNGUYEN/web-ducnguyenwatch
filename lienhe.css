@@ -187,7 +187,7 @@ body {
     flex: 1;
     position: relative;
     /* Hãy thay đường dẫn ảnh đồng hồ của bạn vào đây */
-    background-image: url('royaloak-4.jpg');
+    background-image: url('anh/royaloak-4.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -468,18 +468,7 @@ select option {
     color: #ffffff;
 }
 
-/* Responsive cho điện thoại */
-@media (max-width: 768px) {
-    .form-row-exact {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .form-footer-exact {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-}
+
 
 /* =========================================
    FOOTER SECTION

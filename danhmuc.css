@@ -189,7 +189,7 @@ body {
     margin: 0 auto;
     
     /* Thiết lập ảnh nền */
-    background-image: url('anhxuhuong.png'); /* <-- Bạn thay tên file ảnh của bạn vào đây nhé */
+    background-image: url('anh/anhxuhuong.png'); /* <-- Bạn thay tên file ảnh của bạn vào đây nhé */
 
     background-position: center;
     /* CÂU THẦN CHÚ ÉP KHÍT */

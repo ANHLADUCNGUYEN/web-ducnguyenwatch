@@ -432,21 +432,6 @@ body {
     color: #000; /* Đổi màu icon thành đen */
 }
 
-/* --- Responsive (Đáp ứng giao diện điện thoại/máy tính bảng) --- */
-@media (max-width: 992px) {
-    .commit-grid {
-        grid-template-columns: repeat(2, 1fr); /* Tablet: Rút lại còn 2 cột */
-    }
-}
-
-@media (max-width: 576px) {
-    .commit-grid {
-        grid-template-columns: 1fr; /* Mobile: Dồn thành 1 cột dọc */
-    }
-    .commit-title {
-        font-size: 32px;
-    }
-}
 
 /* =========================================
    FOOTER SECTION
