@@ -47,7 +47,12 @@
  
         /* Bấm overlay thì đóng */
         overlay.addEventListener('click', closeMenu);
- 
+         /* Bấm link trong menu thì vẫn chuyển trang bình thường */
+        navMenu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                closeMenu();
+            });
+        });
 
     }
  
