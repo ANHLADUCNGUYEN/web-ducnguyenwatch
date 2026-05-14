@@ -46,6 +46,7 @@
     /* Hiện nút hamburger */
     .hamburger-btn {
         display: flex;
+    
     }
 
     /* Ẩn menu ngang đi */
@@ -60,8 +61,9 @@
         border-right: 1px solid rgba(220, 179, 101, 0.25);
         padding: 100px 30px 40px 30px;
         transition: left 0.35s ease;
-        z-index: 1050;
+        z-index: 1060;
         overflow-y: auto;
+        
     }
 
     /* Khi JS thêm class 'open' vào nav-menu */
