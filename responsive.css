@@ -110,9 +110,10 @@
         top: 0; left: 0; width: 100%; height: 100%;
         background: rgba(0, 0, 0, 0.6);
         z-index: 1040;
+            pointer-events: none; 
     }
 
-    .nav-overlay.show { display: block; }
+    .nav-overlay.show { display: block;  pointer-events: auto;}
 }
 
 @media (max-width: 480px) {
