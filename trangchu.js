@@ -20,7 +20,7 @@ const header = document.querySelector('.main-header');
 // Bắt sự kiện mỗi khi người dùng cuộn chuột
 window.addEventListener('scroll', function() {
     
-    // Nếu cuộn xuống quá 50px (bạn có thể thay đổi số này)
+    // Nếu cuộn xuống quá 50px
     if (window.scrollY > 50) {
         // Thêm class 'scrolled' vào Header
         header.classList.add('scrolled');
@@ -43,7 +43,7 @@ counters.forEach(counter => {
         // Lấy con số hiện tại đang hiển thị (phải xóa dấu chấm đi để tính toán)
         const current = +counter.innerText.replace(/\./g, '');
 
-        // Tốc độ chạy (Số càng to chạy càng chậm, 200 là vừa đẹp)
+        // Tốc độ chạy (Số càng to chạy càng chậm)
         const increment = target / 200;
 
         if (current < target) {
@@ -61,7 +61,7 @@ counters.forEach(counter => {
         }
     };
 
-    // Để hiệu ứng đẹp hơn, ta sẽ cho nó đợi khoảng 1 giây (1000ms) khi trang vừa load xong mới bắt đầu chạy
+    // Để hiệu ứng đẹp hơn,cho nó đợi khoảng 1 giây (1000ms) khi trang vừa load xong mới bắt đầu chạy
     setTimeout(updateCounter, 1000); 
 });
 // --- LOGIC HIỂN THỊ THÔNG BÁO THÀNH CÔNG ---

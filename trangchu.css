@@ -31,9 +31,9 @@ body {
     transition: all 0.4s ease; /* Chuyển đổi mượt mà */
 }
 .main-header.scrolled {
-    background-color: #0a0a0a; /* Màu đen tuyền của bạn */
+    background-color: #0a0a0a; /* Màu đen tuyền */
     border-bottom: 1px solid rgba(220, 179, 101, 0.3); /* Viền vàng đồng mờ */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Thêm tí bóng đen phía dưới cho đẹp */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
 }
 
 /* --- Khối 1: Logo --- */
@@ -44,15 +44,12 @@ body {
     text-decoration: none;
 }
 
-/* Chỉnh kích thước cho ảnh logo của bạn */
 .logo-img {
     height: 45px; /* Để cao bằng với cái vòng tròn cũ cho cân đối */
     width: auto;
     object-fit: contain;
     
-    /* MẸO: Nếu ảnh của bạn hình vuông và bạn muốn bo tròn nó lại giống mẫu cũ, 
-       hãy xóa dấu gạch chéo ở dòng bên dưới đi nhé: */
-    /* border-radius: 50%; */
+
 }
 /* --- Căn chỉnh mũi tên bên cạnh chữ --- */
 .menu-has-dropdown {
@@ -86,7 +83,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 1.5px; /* Kéo dãn khoảng cách giữa các chữ cái cho sang trọng */
+    letter-spacing: 1.5px; /* Kéo dãn khoảng cách giữa các chữ cái  */
     transition: color 0.3s ease;
 }
 
@@ -179,13 +176,13 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Sửa thành 100vh để tràn đầy màn hình */
+    min-height: 100vh; /* 100vh để tràn đầy màn hình */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #0a0a0a;
     overflow: hidden;
-    padding-top: 80px; /* Bổ sung dòng này: Đẩy chữ xuống bằng đúng chiều cao của Header (80px) */
+    padding-top: 80px; /*  Đẩy chữ xuống bằng đúng chiều cao của Header (80px) */
 }
 
 /* Lớp ảnh nền mờ phía sau */
@@ -827,7 +824,7 @@ body {
    FOOTER SECTION
    ========================================= */
 .main-footer {
-    background-color: #161616; /* Màu nền sáng hơn nền đen một chút */
+    background-color: #161616; 
     color: #888;
     font-family: 'Montserrat', sans-serif;
 }
@@ -835,16 +832,13 @@ body {
 /* --- Khu vực 3 cột --- */
 .footer-container {
     display: flex;
-    background-color: #1a1a1a; /* Màu nền tối hơn phần trên một chút */
+    background-color: #1a1a1a; 
     justify-content: space-between;
     align-items: flex-start;
     
-    /* ĐÃ SỬA: Cho phép mở rộng 100% màn hình */
     max-width: 100%; 
     width: 100%;
-    
-    /* Lề hai bên đang để 5%. Bạn có thể chỉnh số này (ví dụ 3% hoặc 8%) 
-       để nó khớp 100% với cái lề của Header nhé! */
+
     padding: 70px 5%; 
     margin: 0 auto;
 }
@@ -927,14 +921,13 @@ body {
 /* --- Thanh bản quyền dưới cùng --- */
 .footer-bottom {
     border-top: 0.5px solid #dcb365;
-    background-color: #1a1a1a; /* Màu nền tối hơn phần trên một chút */
+    background-color: #1a1a1a; /* Màu nền tối  */
     display: flex;
     justify-content: space-between;
     align-items: center;
     
-    /* ĐÃ SỬA: Cho phép mở rộng 100% giống phần trên */
     max-width: 100%;
-    padding: 25px 5%; /* Nhớ giữ số 5% này giống hệt số ở .footer-container */
+    padding: 25px 5%; /*  giữ số 5% này giống hệt số ở .footer-container */
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;

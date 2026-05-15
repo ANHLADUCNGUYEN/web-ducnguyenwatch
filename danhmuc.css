@@ -31,9 +31,9 @@ body {
     transition: all 0.4s ease; /* Chuyển đổi mượt mà */
 }
 .main-header.scrolled {
-    background-color: #0a0a0a; /* Màu đen tuyền của bạn */
+    background-color: #0a0a0a; 
     border-bottom: 1px solid rgba(220, 179, 101, 0.3); /* Viền vàng đồng mờ */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Thêm tí bóng đen phía dưới cho đẹp */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
 }
 
 /* --- Khối 1: Logo --- */
@@ -44,14 +44,12 @@ body {
     text-decoration: none;
 }
 
-/* Chỉnh kích thước cho ảnh logo của bạn */
 .logo-img {
     height: 45px; /* Để cao bằng với cái vòng tròn cũ cho cân đối */
     width: auto;
     object-fit: contain;
     
-    /* MẸO: Nếu ảnh của bạn hình vuông và bạn muốn bo tròn nó lại giống mẫu cũ, 
-       hãy xóa dấu gạch chéo ở dòng bên dưới đi nhé: */
+   
     /* border-radius: 50%; */
 }
 /* --- Căn chỉnh mũi tên bên cạnh chữ --- */
@@ -176,8 +174,7 @@ body {
    ========================================= */
 .category-hero {
     /* Thêm dòng này để đẩy Banner xuống, né cái Header ra */
-    margin-top: 90px; /* Bạn có thể tăng giảm số 90px này (ví dụ 80px, 100px) cho đến khi nó hở ra vừa mắt */
-    /* Tạo khoảng trống với Header ở trên và phần lưới sản phẩm ở dưới */
+    margin-top: 90px; 
     padding: 40px 5%; 
     background-color: #050505; /* Màu nền đen tuyền của cả trang web */
 }
@@ -185,11 +182,11 @@ body {
 .category-banner {
     position: relative;
     max-width: 1200px;
-    height: 320px; /* Chiều cao của banner, bạn có thể chỉnh to nhỏ tùy ý */
+    height: 320px; 
     margin: 0 auto;
     
     /* Thiết lập ảnh nền */
-    background-image: url('anh/anhxuhuong.png'); /* <-- Bạn thay tên file ảnh của bạn vào đây nhé */
+    background-image: url('anh/anhxuhuong.png'); 
 
     background-position: center;
     /* CÂU THẦN CHÚ ÉP KHÍT */
@@ -627,12 +624,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* ĐÃ SỬA: Cho phép mở rộng 100% màn hình */
     max-width: 100%; 
     width: 100%;
     
-    /* Lề hai bên đang để 5%. Bạn có thể chỉnh số này (ví dụ 3% hoặc 8%) 
-       để nó khớp 100% với cái lề của Header nhé! */
+
     padding: 70px 5%; 
     margin: 0 auto;
 }
@@ -720,7 +715,6 @@ body {
     align-items: center;
     background-color: #1a1a1a; /* Màu nền sáng hơn nền đen một chút */
     
-    /* ĐÃ SỬA: Cho phép mở rộng 100% giống phần trên */
     max-width: 100%;
     padding: 25px 5%; /* Nhớ giữ số 5% này giống hệt số ở .footer-container */
     margin: 0 auto;
